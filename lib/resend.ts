@@ -33,10 +33,10 @@ export const sendEmail = async ({
   try {
     const { data, error } = await resend.emails.send({
       from: marketing
-        ? "Marc from Papermark <marc@ship.papermark.io>"
+        ? "Jacob <jacob@jacob-corlett.co.uk>"
         : system
-          ? "Papermark <system@papermark.io>"
-          : "Marc from Papermark <marc@papermark.io>",
+          ? "Papermark <system@jacob-corlett.co.uk>"
+          : "Jacob <jacob@jacob-corlett.co.uk>",
       to: test ? "delivered@resend.dev" : to,
       cc: cc,
       reply_to: marketing ? "marc@papermark.io" : undefined,
