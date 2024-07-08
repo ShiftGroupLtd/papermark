@@ -23,7 +23,7 @@ const navigation = {
   ],
   tools: [
     { name: "Open Source Friends", href: "/oss-friends" },
-    { name: "Open Source Investors", href: "/open-source-investors" },
+    // { name: "Open Source Investors", href: "/open-source-investors" },
     { name: "Investor Database (7k+)", href: "/investors" },
     {
       name: "YC Application GPT",
