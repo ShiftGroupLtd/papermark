@@ -21,6 +21,6 @@ export default async function DomainMiddleware(req: NextRequest) {
     return NextResponse.rewrite(url, PAPERMARK_HEADERS);
   } else {
     // redirect plain custom domain to papermark.io, eventually to it's own landing page
-    return NextResponse.redirect(new URL("https://www.papermark.io", req.url));
+    return NextResponse.redirect(new URL("https://invest.jacob-corlett.co.uk", req.url));
   }
 }
