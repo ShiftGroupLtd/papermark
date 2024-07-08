@@ -44,7 +44,8 @@ export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
       !(
         host?.includes("localhost") ||
         host?.includes("papermark.io") ||
-        host?.endsWith(".vercel.app")
+        host?.endsWith(".vercel.app") ||
+        host?.includes(".jacob-corlett.co.uk")
       ))
   ) {
     return DomainMiddleware(req);
