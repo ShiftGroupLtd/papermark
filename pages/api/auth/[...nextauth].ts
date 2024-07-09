@@ -81,7 +81,7 @@ export const authOptions: NextAuthOptions = {
         sameSite: "lax",
         path: "/",
         // When working on localhost, the cookie domain must be omitted entirely (https://stackoverflow.com/a/1188145)
-        domain: ".invest.jacob-corlett.co.uk",
+        domain: VERCEL_DEPLOYMENT ? ".invest.jacob-corlett.co.uk" : undefined,
         secure: VERCEL_DEPLOYMENT,
       },
     },
