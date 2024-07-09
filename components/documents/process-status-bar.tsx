@@ -11,7 +11,13 @@ export default function ProcessStatusBar({
   documentVersionId: string;
   className?: string;
 }) {
-  return;
+  return (
+    <Progress
+      value={0}
+      text="Processing doc"
+      className={cn("w-full rounded-none text-[8px] font-semibold", className)}
+    />
+  );
 
   const { fetchStatus, error, statuses, run } =
     useEventRunStatuses(documentVersionId);
@@ -33,7 +39,7 @@ export default function ProcessStatusBar({
     return (
       <Progress
         value={0}
-        text={error.message}
+        // text={error.message}
         className={cn(
           "w-full rounded-none text-[8px] font-semibold",
           className,
@@ -42,32 +48,32 @@ export default function ProcessStatusBar({
     );
   }
 
-  if (run.status === "SUCCESS") {
-    return null;
-  }
+  // if (run.status === "SUCCESS") {
+  //   return null;
+  // }
 
-  const progress = Number(statuses[0]?.data?.progress) * 100 || 0;
-  const text = String(statuses[0]?.data?.text) || "";
+  // const progress = Number(statuses[0]?.data?.progress) * 100 || 0;
+  // const text = String(statuses[0]?.data?.text) || "";
 
-  if (run.status === "FAILURE") {
-    return (
-      <Progress
-        value={progress}
-        text={`Error processing document page ${Number(statuses[0]?.data?.currentPage)}`}
-        error={true}
-        className={cn(
-          "w-full rounded-none text-[8px] font-semibold",
-          className,
-        )}
-      />
-    );
-  }
-
-  return (
-    <Progress
-      value={progress}
-      text={text}
-      className={cn("w-full rounded-none text-[8px] font-semibold", className)}
-    />
-  );
+  // if (run.status === "FAILURE") {
+  //   return (
+  //     <Progress
+  //       value={progress}
+  //       text={`Error processing document page ${Number(statuses[0]?.data?.currentPage)}`}
+  //       error={true}
+  //       className={cn(
+  //         "w-full rounded-none text-[8px] font-semibold",
+  //         className,
+  //       )}
+  //     />
+  //   );
+  // }
+  //
+  // return (
+  //   <Progress
+  //     value={progress}
+  //     text={text}
+  //     className={cn("w-full rounded-none text-[8px] font-semibold", className)}
+  //   />
+  // );
 }
