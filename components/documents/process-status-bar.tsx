@@ -11,6 +11,8 @@ export default function ProcessStatusBar({
   documentVersionId: string;
   className?: string;
 }) {
+  return;
+
   const { fetchStatus, error, statuses, run } =
     useEventRunStatuses(documentVersionId);
 
