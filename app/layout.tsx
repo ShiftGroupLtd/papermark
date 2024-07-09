@@ -57,10 +57,6 @@ export default function RootLayout({
             data-tolt={process.env.NEXT_PUBLIC_TOLT_REFERRAL_ID}
           />
         )}
-        <PlausibleProvider
-          domain="papermark.io"
-          enabled={process.env.NEXT_PUBLIC_VERCEL_ENV === "production"}
-        />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
